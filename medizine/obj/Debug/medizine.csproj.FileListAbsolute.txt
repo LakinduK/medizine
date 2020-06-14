@@ -1,0 +1,9 @@
+E:\gitNewProjects\C#\medizine\medizine\bin\Debug\medizine.exe.config
+E:\gitNewProjects\C#\medizine\medizine\bin\Debug\medizine.exe
+E:\gitNewProjects\C#\medizine\medizine\bin\Debug\medizine.pdb
+E:\gitNewProjects\C#\medizine\medizine\obj\Debug\medizine.csprojResolveAssemblyReference.cache
+E:\gitNewProjects\C#\medizine\medizine\obj\Debug\medizine.Form1.resources
+E:\gitNewProjects\C#\medizine\medizine\obj\Debug\medizine.Properties.Resources.resources
+E:\gitNewProjects\C#\medizine\medizine\obj\Debug\medizine.csproj.GenerateResource.Cache
+E:\gitNewProjects\C#\medizine\medizine\obj\Debug\medizine.exe
+E:\gitNewProjects\C#\medizine\medizine\obj\Debug\medizine.pdb
