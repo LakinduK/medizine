@@ -17,11 +17,12 @@ namespace medizine
         {
             InitializeComponent();
         }
+        // database con
 
         SqlConnection con = new SqlConnection("Data Source=SLBRAVO_06;Initial Catalog=pharmacy;Integrated Security=True");
-        SqlCommand cmd;  //for the'add' button
-        SqlCommand cmd1;  //for the 'print' button
-        SqlDataAdapter dr;
+        SqlCommand cmd;  // for the'add' button
+        SqlCommand cmd1;  // for the 'print' button
+        SqlDataAdapter da;
         SqlDataReader read;
 
         private void txtdcode_KeyPress(object sender, KeyPressEventArgs e)
@@ -33,7 +34,7 @@ namespace medizine
 
             if(e.KeyChar == 13) //13 is the 'enter' key.
             {
-                cmd = new SqlCommand("select * from product where id='"+txtdcode.Text+"'",con);
+                cmd = new SqlCommand("select * from product where bid='"+txtdcode.Text+"'",con);
                 con.Open();
                 read = cmd.ExecuteReader();
 
@@ -89,11 +90,13 @@ namespace medizine
                 txtdname.Clear();
                 txtprice.Clear();
                 txtqty.Clear();
+                txtdcode.Select();        //sets the cursor to drug code textbox
 
             }
             else
             {
                 MessageBox.Show("enter the quantity",("empty value"),MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                txtqty.Select();        //sets the cursor to quantity textbox
             }
 
             
@@ -114,9 +117,6 @@ namespace medizine
                 }
 
                 txttotal.Text = sum.ToString();
-
-
-
 
 
             }
@@ -146,6 +146,7 @@ namespace medizine
                 int qty = 0;
                 int tot = 0;
 
+                // to save the table 'sales_product' from datagridview 
                 for (int row = 0; row < dataGridView1.Rows.Count; row++)
                 {
                     dname = dataGridView1.Rows[row].Cells[1].Value.ToString();
@@ -163,15 +164,20 @@ namespace medizine
 
                     cmd1.ExecuteNonQuery();
 
-
                 }
 
                 MessageBox.Show("sales completed successfully!",("notification"),MessageBoxButtons.OK,MessageBoxIcon.Information);
 
-                con.Close();
-            
-        }
+            // print recipt
 
+                print p = new print();
+                p.Salesid = lastid;
+                p.Show();
+
+
+                con.Close();
+           
+        }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
@@ -189,6 +195,7 @@ namespace medizine
             else
             {
                 MessageBox.Show("enter the amount of payment", ("empty values"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtpay.Select();        //sets the cursor to payment amount textbox
             }
         }
 
@@ -200,9 +207,5 @@ namespace medizine
             txtprice.Clear();
             txtqty.Clear();
         }
-
-
-
-
     }
 }
