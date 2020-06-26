@@ -207,5 +207,54 @@ namespace medizine
             txtprice.Clear();
             txtqty.Clear();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // show date/time on top of the program
+            timer1.Start();
+            lblDate.Text = DateTime.Now.ToLongDateString();
+            lblTime.Text = DateTime.Now.ToLongTimeString();
+        }
+            
+            //timer for date time update
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToLongTimeString();
+            timer1.Start();
+        }
+
+        private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Inventory inv = new Inventory();
+                
+                inv.Show();
+                
+            
+            
+        }
+
+        // Exit Application - from menu strip
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogExit = MessageBox.Show("Are you sure you want to exit?", ("Exit"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogExit == DialogResult.Yes)
+            {
+                Application.ExitThread();
+            }
+            
+        }
+        // Exit Application - from window close button
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialogExit = MessageBox.Show("Are you sure you want to exit?", ("Exit"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogExit == DialogResult.Yes)
+            {
+                Application.ExitThread();
+            }
+            else if (dialogExit == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }
