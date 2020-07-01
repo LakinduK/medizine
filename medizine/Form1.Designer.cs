@@ -29,12 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.localBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cloudBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.insertItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panelMid = new System.Windows.Forms.Panel();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
             this.txtbal = new System.Windows.Forms.TextBox();
             this.txtpay = new System.Windows.Forms.TextBox();
             this.txttotal = new System.Windows.Forms.TextBox();
@@ -50,6 +66,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelBottom = new System.Windows.Forms.Panel();
+            this.btnNextCust = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,29 +77,14 @@
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.insertItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.localBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cloudBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label9 = new System.Windows.Forms.Label();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.panelMid.SuspendLayout();
             this.panelBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -119,6 +121,107 @@
             this.label1.Text = "MediZine Pharmacy";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(962, 28);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem,
+            this.aboutToolStripMenuItem,
+            this.aboutToolStripMenuItem1,
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(132, 26);
+            this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.localBackupToolStripMenuItem,
+            this.cloudBackupToolStripMenuItem});
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(132, 26);
+            this.aboutToolStripMenuItem.Text = "Backup";
+            // 
+            // localBackupToolStripMenuItem
+            // 
+            this.localBackupToolStripMenuItem.Name = "localBackupToolStripMenuItem";
+            this.localBackupToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.localBackupToolStripMenuItem.Text = "Local Backup";
+            this.localBackupToolStripMenuItem.Click += new System.EventHandler(this.localBackupToolStripMenuItem_Click);
+            // 
+            // cloudBackupToolStripMenuItem
+            // 
+            this.cloudBackupToolStripMenuItem.Name = "cloudBackupToolStripMenuItem";
+            this.cloudBackupToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.cloudBackupToolStripMenuItem.Text = "Cloud Backup";
+            // 
+            // aboutToolStripMenuItem1
+            // 
+            this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(132, 26);
+            this.aboutToolStripMenuItem1.Text = "About";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(132, 26);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inventoryToolStripMenuItem,
+            this.insertItemsToolStripMenuItem,
+            this.reportsToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
+            this.editToolStripMenuItem.Text = "Menu";
+            // 
+            // inventoryToolStripMenuItem
+            // 
+            this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
+            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
+            this.inventoryToolStripMenuItem.Text = "Inventory";
+            this.inventoryToolStripMenuItem.Click += new System.EventHandler(this.inventoryToolStripMenuItem_Click);
+            // 
+            // insertItemsToolStripMenuItem
+            // 
+            this.insertItemsToolStripMenuItem.Name = "insertItemsToolStripMenuItem";
+            this.insertItemsToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
+            this.insertItemsToolStripMenuItem.Text = "Insert items";
+            this.insertItemsToolStripMenuItem.Click += new System.EventHandler(this.insertItemsToolStripMenuItem_Click);
+            // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
             // imageList1
             // 
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
@@ -146,37 +249,65 @@
             this.panelMid.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMid.Location = new System.Drawing.Point(0, 65);
             this.panelMid.Name = "panelMid";
-            this.panelMid.Size = new System.Drawing.Size(962, 222);
+            this.panelMid.Size = new System.Drawing.Size(962, 216);
             this.panelMid.TabIndex = 1;
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblTime.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(852, 0);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Padding = new System.Windows.Forms.Padding(0, 5, 10, 0);
+            this.lblTime.Size = new System.Drawing.Size(57, 26);
+            this.lblTime.TabIndex = 8;
+            this.lblTime.Text = "Time";
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblDate.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(909, 0);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.lblDate.Size = new System.Drawing.Size(53, 26);
+            this.lblDate.TabIndex = 8;
+            this.lblDate.Text = "Date";
             // 
             // txtbal
             // 
+            this.txtbal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtbal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbal.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbal.Location = new System.Drawing.Point(624, 126);
+            this.txtbal.Location = new System.Drawing.Point(789, 177);
             this.txtbal.Name = "txtbal";
-            this.txtbal.Size = new System.Drawing.Size(131, 30);
+            this.txtbal.Size = new System.Drawing.Size(131, 23);
             this.txtbal.TabIndex = 7;
             // 
             // txtpay
             // 
             this.txtpay.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpay.Location = new System.Drawing.Point(624, 81);
+            this.txtpay.Location = new System.Drawing.Point(178, 170);
             this.txtpay.Name = "txtpay";
             this.txtpay.Size = new System.Drawing.Size(131, 30);
             this.txtpay.TabIndex = 6;
             // 
             // txttotal
             // 
+            this.txttotal.BackColor = System.Drawing.SystemColors.Control;
+            this.txttotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txttotal.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttotal.Location = new System.Drawing.Point(624, 48);
+            this.txttotal.Location = new System.Drawing.Point(789, 136);
             this.txttotal.Name = "txttotal";
-            this.txttotal.Size = new System.Drawing.Size(131, 30);
+            this.txttotal.Size = new System.Drawing.Size(131, 23);
             this.txttotal.TabIndex = 5;
             // 
             // txtqty
             // 
             this.txtqty.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqty.Location = new System.Drawing.Point(161, 173);
+            this.txtqty.Location = new System.Drawing.Point(178, 134);
             this.txtqty.Name = "txtqty";
             this.txtqty.Size = new System.Drawing.Size(243, 30);
             this.txtqty.TabIndex = 4;
@@ -184,7 +315,7 @@
             // txtprice
             // 
             this.txtprice.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtprice.Location = new System.Drawing.Point(161, 122);
+            this.txtprice.Location = new System.Drawing.Point(178, 98);
             this.txtprice.Name = "txtprice";
             this.txtprice.Size = new System.Drawing.Size(243, 30);
             this.txtprice.TabIndex = 3;
@@ -192,7 +323,7 @@
             // txtdname
             // 
             this.txtdname.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdname.Location = new System.Drawing.Point(161, 85);
+            this.txtdname.Location = new System.Drawing.Point(178, 61);
             this.txtdname.Name = "txtdname";
             this.txtdname.Size = new System.Drawing.Size(243, 30);
             this.txtdname.TabIndex = 2;
@@ -200,7 +331,7 @@
             // txtdcode
             // 
             this.txtdcode.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdcode.Location = new System.Drawing.Point(161, 44);
+            this.txtdcode.Location = new System.Drawing.Point(178, 20);
             this.txtdcode.Name = "txtdcode";
             this.txtdcode.Size = new System.Drawing.Size(243, 30);
             this.txtdcode.TabIndex = 1;
@@ -210,83 +341,100 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(56, 177);
+            this.label5.Location = new System.Drawing.Point(55, 140);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 19);
+            this.label5.Size = new System.Drawing.Size(116, 19);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Quantity";
+            this.label5.Text = "Quantity       :";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(536, 126);
+            this.label8.Location = new System.Drawing.Point(696, 177);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 19);
+            this.label8.Size = new System.Drawing.Size(97, 19);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Balance";
+            this.label8.Text = "Balance   :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(56, 126);
+            this.label4.Location = new System.Drawing.Point(55, 103);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 19);
+            this.label4.Size = new System.Drawing.Size(115, 19);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Price";
+            this.label4.Text = "Price            :";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(536, 85);
+            this.label7.Location = new System.Drawing.Point(55, 175);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 19);
+            this.label7.Size = new System.Drawing.Size(116, 19);
             this.label7.TabIndex = 0;
-            this.label7.Text = "Payment";
+            this.label7.Text = "Payment      :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(56, 90);
+            this.label3.Location = new System.Drawing.Point(55, 66);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 19);
+            this.label3.Size = new System.Drawing.Size(117, 19);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Prod. Name";
+            this.label3.Text = "Prod. Name :";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(536, 48);
+            this.label6.Location = new System.Drawing.Point(696, 136);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 19);
+            this.label6.Size = new System.Drawing.Size(96, 19);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Total";
+            this.label6.Text = "Total (Rs)  :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(56, 48);
+            this.label2.Location = new System.Drawing.Point(55, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 19);
+            this.label2.Size = new System.Drawing.Size(117, 19);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Prod. Code";
+            this.label2.Text = "Prod. Code  :";
             // 
             // panelBottom
             // 
+            this.panelBottom.Controls.Add(this.btnNextCust);
             this.panelBottom.Controls.Add(this.btnClear);
             this.panelBottom.Controls.Add(this.dataGridView1);
             this.panelBottom.Controls.Add(this.btnPrint);
             this.panelBottom.Controls.Add(this.btnAdd);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBottom.Location = new System.Drawing.Point(0, 287);
+            this.panelBottom.Location = new System.Drawing.Point(0, 281);
             this.panelBottom.Name = "panelBottom";
             this.panelBottom.Size = new System.Drawing.Size(962, 360);
             this.panelBottom.TabIndex = 2;
+            // 
+            // btnNextCust
+            // 
+            this.btnNextCust.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNextCust.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnNextCust.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnNextCust.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnNextCust.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnNextCust.Location = new System.Drawing.Point(789, 289);
+            this.btnNextCust.MaximumSize = new System.Drawing.Size(135, 52);
+            this.btnNextCust.Name = "btnNextCust";
+            this.btnNextCust.Size = new System.Drawing.Size(135, 52);
+            this.btnNextCust.TabIndex = 3;
+            this.btnNextCust.Text = "Next Cust.";
+            this.btnNextCust.UseVisualStyleBackColor = false;
+            this.btnNextCust.Click += new System.EventHandler(this.btnNextCust_Click);
             // 
             // btnClear
             // 
@@ -296,7 +444,7 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnClear.Location = new System.Drawing.Point(789, 115);
+            this.btnClear.Location = new System.Drawing.Point(789, 104);
             this.btnClear.MaximumSize = new System.Drawing.Size(135, 52);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(135, 52);
@@ -324,8 +472,8 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 34);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(742, 323);
             this.dataGridView1.TabIndex = 1;
@@ -372,7 +520,7 @@
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnPrint.Location = new System.Drawing.Point(789, 269);
+            this.btnPrint.Location = new System.Drawing.Point(789, 180);
             this.btnPrint.MaximumSize = new System.Drawing.Size(135, 84);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(135, 84);
@@ -399,122 +547,6 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.helpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(962, 28);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripMenuItem,
-            this.aboutToolStripMenuItem,
-            this.aboutToolStripMenuItem1,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.saveToolStripMenuItem.Text = "Save";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.localBackupToolStripMenuItem,
-            this.cloudBackupToolStripMenuItem});
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.aboutToolStripMenuItem.Text = "Backup";
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inventoryToolStripMenuItem,
-            this.insertItemsToolStripMenuItem,
-            this.reportsToolStripMenuItem});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
-            this.editToolStripMenuItem.Text = "Menu";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // inventoryToolStripMenuItem
-            // 
-            this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
-            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.inventoryToolStripMenuItem.Text = "Inventory";
-            this.inventoryToolStripMenuItem.Click += new System.EventHandler(this.inventoryToolStripMenuItem_Click);
-            // 
-            // insertItemsToolStripMenuItem
-            // 
-            this.insertItemsToolStripMenuItem.Name = "insertItemsToolStripMenuItem";
-            this.insertItemsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.insertItemsToolStripMenuItem.Text = "Insert items";
-            // 
-            // localBackupToolStripMenuItem
-            // 
-            this.localBackupToolStripMenuItem.Name = "localBackupToolStripMenuItem";
-            this.localBackupToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.localBackupToolStripMenuItem.Text = "Local Backup";
-            // 
-            // cloudBackupToolStripMenuItem
-            // 
-            this.cloudBackupToolStripMenuItem.Name = "cloudBackupToolStripMenuItem";
-            this.cloudBackupToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.cloudBackupToolStripMenuItem.Text = "Cloud Backup";
-            // 
-            // aboutToolStripMenuItem1
-            // 
-            this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
-            this.aboutToolStripMenuItem1.Text = "About";
-            // 
-            // reportsToolStripMenuItem
-            // 
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.reportsToolStripMenuItem.Text = "Reports";
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblDate.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(909, 0);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.lblDate.Size = new System.Drawing.Size(53, 26);
-            this.lblDate.TabIndex = 8;
-            this.lblDate.Text = "Date";
-            // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblTime.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(852, 0);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Padding = new System.Windows.Forms.Padding(0, 5, 10, 0);
-            this.lblTime.Size = new System.Drawing.Size(57, 26);
-            this.lblTime.TabIndex = 8;
-            this.lblTime.Text = "Time";
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
@@ -531,13 +563,6 @@
             this.label9.Text = "MediZine Pharmacy ® - 2020";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -548,6 +573,7 @@
             this.Controls.Add(this.panelMid);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(980, 723);
             this.Name = "Form1";
@@ -558,12 +584,12 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.panelMid.ResumeLayout(false);
             this.panelMid.PerformLayout();
             this.panelBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -617,6 +643,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Button btnNextCust;
     }
 }
 

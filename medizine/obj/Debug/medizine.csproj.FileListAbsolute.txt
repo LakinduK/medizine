@@ -9,3 +9,4 @@ E:\gitNewProjects\C#\medizine\medizine\obj\Debug\medizine.exe
 E:\gitNewProjects\C#\medizine\medizine\obj\Debug\medizine.pdb
 E:\gitNewProjects\C#\medizine\medizine\obj\Debug\medizine.print.resources
 E:\gitNewProjects\C#\medizine\medizine\obj\Debug\medizine.Inventory.resources
+E:\gitNewProjects\C#\medizine\medizine\obj\Debug\medizine.InsertItems.resources

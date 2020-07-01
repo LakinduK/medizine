@@ -83,5 +83,25 @@ namespace medizine
             string qryLoadCategoryData = "SELECT * FROM product WHERE category='"+comboBox1.Text+"'";
             disp_data(qryLoadCategoryData);
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            string qryLoadData = "SELECT * FROM product";
+            disp_data(qryLoadData);
+        }
+
+        //SEARCH brand by text changed
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string qrySearchData = "SELECT * FROM product WHERE productname like '"+txtSearch.Text+"%' ";
+            disp_data(qrySearchData);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtSearch.Clear();
+            string qryLoadData = "SELECT * FROM product";
+            disp_data(qryLoadData);
+        }
     }
 }

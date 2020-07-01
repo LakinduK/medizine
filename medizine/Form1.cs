@@ -64,12 +64,13 @@ namespace medizine
         {
             
             // checks if the quantity is empty
-            if(txtqty.Text != "")
+            if(txtqty.Text != "" && txtdcode.Text !="")
             {
                 string dcode = txtdcode.Text;
                 string dname = txtdname.Text;
                 double price = double.Parse(txtprice.Text);
                 double qty = double.Parse(txtqty.Text);
+
 
                 // to fill the datagridview
                 double tot = price * qty;
@@ -95,7 +96,7 @@ namespace medizine
             }
             else
             {
-                MessageBox.Show("enter the quantity",("empty value"),MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("enter the product id & quantity",("empty values"),MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 txtqty.Select();        //sets the cursor to quantity textbox
             }
 
@@ -132,13 +133,15 @@ namespace medizine
 
                 string sql1;    //insert into 'sales' table
                 string sql2;    //insert into 'sales_product' table
+                string dateTime = DateTime.Now.ToString();
 
-                sql1 = "insert into sales(subtotal,pay,balance)values(@subtotal,@pay,@balance) select @@identity;";
+                sql1 = "INSERT INTO sales(subtotal,pay,balance,datetime)values(@subtotal,@pay,@balance,@dt) select @@identity;";
                 con.Open();
                 cmd = new SqlCommand(sql1, con);
                 cmd.Parameters.AddWithValue("@subtotal", total);
                 cmd.Parameters.AddWithValue("@pay", pay);
                 cmd.Parameters.AddWithValue("@balance", bal);
+                cmd.Parameters.AddWithValue("@dt", dateTime);
                 int lastid = int.Parse(cmd.ExecuteScalar().ToString());
 
                 string dname;
@@ -210,7 +213,7 @@ namespace medizine
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // show date/time on top of the program
+            // show date/time on top of the program  = YYYY-MM-DD HH:MI:SS.
             timer1.Start();
             lblDate.Text = DateTime.Now.ToLongDateString();
             lblTime.Text = DateTime.Now.ToLongTimeString();
@@ -255,6 +258,34 @@ namespace medizine
             {
                 e.Cancel = true;
             }
+        }
+
+        private void localBackupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //backup code here
+        }
+
+        private void btnNextCust_Click(object sender, EventArgs e)
+        {
+            //clear textboxes 
+            txtdcode.Clear();
+            txtdname.Clear();
+            txtprice.Clear();
+            txtqty.Clear();
+            txttotal.Clear();
+            txtpay.Clear();
+            txtbal.Clear();
+
+            dataGridView1.Rows.Clear(); //to reset datagridview
+            dataGridView1.Refresh();
+            txtdcode.Select();        //sets the cursor to drug code textbox
+
+        }
+
+        private void insertItemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertItems ins = new InsertItems();
+            ins.Show();
         }
     }
 }

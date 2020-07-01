@@ -1,0 +1,12 @@
+E:\gitNewProjects\C#\medizine\medizine\bin\Release\medizine.exe.config
+E:\gitNewProjects\C#\medizine\medizine\bin\Release\medizine.exe
+E:\gitNewProjects\C#\medizine\medizine\bin\Release\medizine.pdb
+E:\gitNewProjects\C#\medizine\medizine\obj\Release\medizine.Form1.resources
+E:\gitNewProjects\C#\medizine\medizine\obj\Release\medizine.Inventory.resources
+E:\gitNewProjects\C#\medizine\medizine\obj\Release\medizine.print.resources
+E:\gitNewProjects\C#\medizine\medizine\obj\Release\medizine.Properties.Resources.resources
+E:\gitNewProjects\C#\medizine\medizine\obj\Release\medizine.csproj.GenerateResource.Cache
+E:\gitNewProjects\C#\medizine\medizine\obj\Release\medizine.exe
+E:\gitNewProjects\C#\medizine\medizine\obj\Release\medizine.pdb
+E:\gitNewProjects\C#\medizine\medizine\obj\Release\medizine.csprojResolveAssemblyReference.cache
+E:\gitNewProjects\C#\medizine\medizine\obj\Release\medizine.InsertItems.resources
