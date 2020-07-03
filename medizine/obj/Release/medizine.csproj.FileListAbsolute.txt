@@ -10,3 +10,4 @@ E:\gitNewProjects\C#\medizine\medizine\obj\Release\medizine.exe
 E:\gitNewProjects\C#\medizine\medizine\obj\Release\medizine.pdb
 E:\gitNewProjects\C#\medizine\medizine\obj\Release\medizine.csprojResolveAssemblyReference.cache
 E:\gitNewProjects\C#\medizine\medizine\obj\Release\medizine.InsertItems.resources
+E:\gitNewProjects\C#\medizine\medizine\obj\Release\medizine.Login.resources

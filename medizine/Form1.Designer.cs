@@ -40,7 +40,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.localBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cloudBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,9 +49,12 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panelMid = new System.Windows.Forms.Panel();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.txtbal = new System.Windows.Forms.TextBox();
+            this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.txtpay = new System.Windows.Forms.TextBox();
             this.txttotal = new System.Windows.Forms.TextBox();
             this.txtqty = new System.Windows.Forms.TextBox();
@@ -60,6 +63,7 @@
             this.txtdcode = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -69,16 +73,16 @@
             this.btnNextCust = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label9 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -139,7 +143,7 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.saveToolStripMenuItem,
             this.aboutToolStripMenuItem,
-            this.aboutToolStripMenuItem1,
+            this.logOutToolStripMenuItem1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
@@ -173,11 +177,12 @@
             this.cloudBackupToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.cloudBackupToolStripMenuItem.Text = "Cloud Backup";
             // 
-            // aboutToolStripMenuItem1
+            // logOutToolStripMenuItem1
             // 
-            this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(132, 26);
-            this.aboutToolStripMenuItem1.Text = "About";
+            this.logOutToolStripMenuItem1.Name = "logOutToolStripMenuItem1";
+            this.logOutToolStripMenuItem1.Size = new System.Drawing.Size(132, 26);
+            this.logOutToolStripMenuItem1.Text = "Logout";
+            this.logOutToolStripMenuItem1.Click += new System.EventHandler(this.logOutToolStripMenuItem1_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -230,9 +235,12 @@
             // 
             // panelMid
             // 
+            this.panelMid.Controls.Add(this.lblUserName);
+            this.panelMid.Controls.Add(this.label10);
             this.panelMid.Controls.Add(this.lblTime);
             this.panelMid.Controls.Add(this.lblDate);
             this.panelMid.Controls.Add(this.txtbal);
+            this.panelMid.Controls.Add(this.txtCustomerName);
             this.panelMid.Controls.Add(this.txtpay);
             this.panelMid.Controls.Add(this.txttotal);
             this.panelMid.Controls.Add(this.txtqty);
@@ -241,6 +249,7 @@
             this.panelMid.Controls.Add(this.txtdcode);
             this.panelMid.Controls.Add(this.label5);
             this.panelMid.Controls.Add(this.label8);
+            this.panelMid.Controls.Add(this.label11);
             this.panelMid.Controls.Add(this.label4);
             this.panelMid.Controls.Add(this.label7);
             this.panelMid.Controls.Add(this.label3);
@@ -251,6 +260,30 @@
             this.panelMid.Name = "panelMid";
             this.panelMid.Size = new System.Drawing.Size(962, 216);
             this.panelMid.TabIndex = 1;
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblUserName.Font = new System.Drawing.Font("Century Gothic", 10.2F);
+            this.lblUserName.Location = new System.Drawing.Point(70, 0);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Padding = new System.Windows.Forms.Padding(0, 5, 10, 0);
+            this.lblUserName.Size = new System.Drawing.Size(101, 26);
+            this.lblUserName.TabIndex = 9;
+            this.lblUserName.Text = "username";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 10.2F);
+            this.label10.Location = new System.Drawing.Point(0, 0);
+            this.label10.Name = "label10";
+            this.label10.Padding = new System.Windows.Forms.Padding(0, 5, 10, 0);
+            this.label10.Size = new System.Drawing.Size(70, 26);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "User : ";
             // 
             // lblTime
             // 
@@ -286,13 +319,21 @@
             this.txtbal.Size = new System.Drawing.Size(131, 23);
             this.txtbal.TabIndex = 7;
             // 
+            // txtCustomerName
+            // 
+            this.txtCustomerName.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerName.Location = new System.Drawing.Point(793, 100);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.Size = new System.Drawing.Size(131, 30);
+            this.txtCustomerName.TabIndex = 5;
+            // 
             // txtpay
             // 
             this.txtpay.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpay.Location = new System.Drawing.Point(178, 170);
+            this.txtpay.Location = new System.Drawing.Point(793, 54);
             this.txtpay.Name = "txtpay";
             this.txtpay.Size = new System.Drawing.Size(131, 30);
-            this.txtpay.TabIndex = 6;
+            this.txtpay.TabIndex = 5;
             // 
             // txttotal
             // 
@@ -307,15 +348,16 @@
             // txtqty
             // 
             this.txtqty.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqty.Location = new System.Drawing.Point(178, 134);
+            this.txtqty.Location = new System.Drawing.Point(178, 168);
             this.txtqty.Name = "txtqty";
             this.txtqty.Size = new System.Drawing.Size(243, 30);
             this.txtqty.TabIndex = 4;
+            this.txtqty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtqty_KeyPress);
             // 
             // txtprice
             // 
             this.txtprice.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtprice.Location = new System.Drawing.Point(178, 98);
+            this.txtprice.Location = new System.Drawing.Point(178, 132);
             this.txtprice.Name = "txtprice";
             this.txtprice.Size = new System.Drawing.Size(243, 30);
             this.txtprice.TabIndex = 3;
@@ -323,7 +365,7 @@
             // txtdname
             // 
             this.txtdname.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdname.Location = new System.Drawing.Point(178, 61);
+            this.txtdname.Location = new System.Drawing.Point(178, 95);
             this.txtdname.Name = "txtdname";
             this.txtdname.Size = new System.Drawing.Size(243, 30);
             this.txtdname.TabIndex = 2;
@@ -331,7 +373,7 @@
             // txtdcode
             // 
             this.txtdcode.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdcode.Location = new System.Drawing.Point(178, 20);
+            this.txtdcode.Location = new System.Drawing.Point(178, 54);
             this.txtdcode.Name = "txtdcode";
             this.txtdcode.Size = new System.Drawing.Size(243, 30);
             this.txtdcode.TabIndex = 1;
@@ -341,7 +383,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(55, 140);
+            this.label5.Location = new System.Drawing.Point(55, 174);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 19);
             this.label5.TabIndex = 0;
@@ -357,11 +399,21 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Balance   :";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(639, 100);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(153, 19);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Customer Name :";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(55, 103);
+            this.label4.Location = new System.Drawing.Point(55, 137);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 19);
             this.label4.TabIndex = 0;
@@ -371,17 +423,17 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(55, 175);
+            this.label7.Location = new System.Drawing.Point(691, 65);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(116, 19);
+            this.label7.Size = new System.Drawing.Size(101, 19);
             this.label7.TabIndex = 0;
-            this.label7.Text = "Payment      :";
+            this.label7.Text = "Payment   :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(55, 66);
+            this.label3.Location = new System.Drawing.Point(55, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 19);
             this.label3.TabIndex = 0;
@@ -401,7 +453,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(55, 25);
+            this.label2.Location = new System.Drawing.Point(55, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 19);
             this.label2.TabIndex = 0;
@@ -431,7 +483,7 @@
             this.btnNextCust.MaximumSize = new System.Drawing.Size(135, 52);
             this.btnNextCust.Name = "btnNextCust";
             this.btnNextCust.Size = new System.Drawing.Size(135, 52);
-            this.btnNextCust.TabIndex = 3;
+            this.btnNextCust.TabIndex = 9;
             this.btnNextCust.Text = "Next Cust.";
             this.btnNextCust.UseVisualStyleBackColor = false;
             this.btnNextCust.Click += new System.EventHandler(this.btnNextCust_Click);
@@ -448,7 +500,7 @@
             this.btnClear.MaximumSize = new System.Drawing.Size(135, 52);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(135, 52);
-            this.btnClear.TabIndex = 2;
+            this.btnClear.TabIndex = 7;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -479,39 +531,6 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Drug Code";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Drug Name";
-            this.Column2.MinimumWidth = 10;
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Price";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Quantity";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Total";
-            this.Column5.Name = "Column5";
-            // 
-            // delete
-            // 
-            this.delete.HeaderText = "Delete";
-            this.delete.Name = "delete";
-            this.delete.Text = "delete";
-            this.delete.UseColumnTextForButtonValue = true;
-            // 
             // btnPrint
             // 
             this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -524,7 +543,7 @@
             this.btnPrint.MaximumSize = new System.Drawing.Size(135, 84);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(135, 84);
-            this.btnPrint.TabIndex = 0;
+            this.btnPrint.TabIndex = 8;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
@@ -542,7 +561,7 @@
             this.btnAdd.MaximumSize = new System.Drawing.Size(135, 52);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(135, 52);
-            this.btnAdd.TabIndex = 0;
+            this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -562,6 +581,39 @@
             this.label9.TabIndex = 3;
             this.label9.Text = "MediZine Pharmacy ® - 2020";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Prod. Code";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Prod. Name";
+            this.Column2.MinimumWidth = 10;
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Price";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Quantity";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Sub Total";
+            this.Column5.Name = "Column5";
+            // 
+            // delete
+            // 
+            this.delete.HeaderText = "Delete";
+            this.delete.Name = "delete";
+            this.delete.Text = "delete";
+            this.delete.UseColumnTextForButtonValue = true;
             // 
             // Form1
             // 
@@ -620,12 +672,6 @@
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewButtonColumn delete;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
@@ -634,7 +680,7 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem localBackupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cloudBackupToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem inventoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem insertItemsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
@@ -644,6 +690,16 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Button btnNextCust;
+        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtCustomerName;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewButtonColumn delete;
     }
 }
 

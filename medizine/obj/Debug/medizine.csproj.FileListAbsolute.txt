@@ -10,3 +10,4 @@ E:\gitNewProjects\C#\medizine\medizine\obj\Debug\medizine.pdb
 E:\gitNewProjects\C#\medizine\medizine\obj\Debug\medizine.print.resources
 E:\gitNewProjects\C#\medizine\medizine\obj\Debug\medizine.Inventory.resources
 E:\gitNewProjects\C#\medizine\medizine\obj\Debug\medizine.InsertItems.resources
+E:\gitNewProjects\C#\medizine\medizine\obj\Debug\medizine.Login.resources

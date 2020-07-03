@@ -17,6 +17,9 @@ namespace medizine
         {
             InitializeComponent();
             fillComboBox();
+
+            // user name from the login
+            lblUserName.Text = LoginInfo.userId;
         }
 
         // database con
@@ -24,7 +27,8 @@ namespace medizine
 
         private void Inventory_Load(object sender, EventArgs e)
         {
-            string qryLoadData = "SELECT * FROM product";
+            //string qryLoadData = "SELECT (bid,productname,genericName,category,supplier,packSize,qtyAvailable,qtySold,qtyRemaining,expDate,price,discount) FROM product";
+            string qryLoadData = "SELECT bid,productname,genericName,category,supplier,packSize,qtyAvailable,qtySold,qtyRemaining,expDate,price,discount FROM product";
             disp_data(qryLoadData);
         }
 

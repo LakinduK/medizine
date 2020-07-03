@@ -16,7 +16,17 @@ namespace medizine
         public Form1()
         {
             InitializeComponent();
+
+            // user name from the login
+            lblUserName.Text = LoginInfo.userId;
+
+            // stop guest account from accessing insert items
+            if (LoginInfo.userId != "Nipuni"  || LoginInfo.userId != "nipuni")
+            {
+                insertItemsToolStripMenuItem.Visible = false;
+            }
         }
+      
         // database con
 
         SqlConnection con = new SqlConnection("Data Source=SLBRAVO_06;Initial Catalog=pharmacy;Integrated Security=True");
@@ -209,6 +219,7 @@ namespace medizine
             txtdname.Clear();
             txtprice.Clear();
             txtqty.Clear();
+            txtCustomerName.Clear();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -286,6 +297,63 @@ namespace medizine
         {
             InsertItems ins = new InsertItems();
             ins.Show();
+        }
+
+        private void logOutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogExit = MessageBox.Show("Are you sure you want to Log out?", ("Log out"), MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogExit == DialogResult.Yes)
+            {
+                
+            }
+            else if (dialogExit == DialogResult.No)
+            {
+               
+            }
+        }
+
+        private void txtqty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == 13) //13 is the 'enter' key.
+            {
+                // checks if the quantity is empty
+                if (txtqty.Text != "" && txtdcode.Text != "")
+                {
+                    string dcode = txtdcode.Text;
+                    string dname = txtdname.Text;
+                    double price = double.Parse(txtprice.Text);
+                    double qty = double.Parse(txtqty.Text);
+
+
+                    // to fill the datagridview
+                    double tot = price * qty;
+                    this.dataGridView1.Rows.Add(dcode, dname, price, qty, tot);
+
+                    //to calculate total
+                    int sum = 0;
+
+                    for (int row = 0; row < dataGridView1.Rows.Count; row++)
+                    {
+                        sum = sum + Convert.ToInt32(dataGridView1.Rows[row].Cells[4].Value);
+                    }
+
+                    txttotal.Text = sum.ToString();
+
+                    //clear textboxes 
+                    txtdcode.Clear();
+                    txtdname.Clear();
+                    txtprice.Clear();
+                    txtqty.Clear();
+                    txtdcode.Select();        //sets the cursor to drug code textbox
+
+                }
+                else
+                {
+                    MessageBox.Show("enter the quantity", ("empty values"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtqty.Focus();        //sets the cursor to quantity textbox
+                }
+            }
+        
         }
     }
 }

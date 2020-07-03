@@ -68,6 +68,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -129,40 +131,46 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(558, 181);
+            this.btnDelete.BackColor = System.Drawing.Color.LightCoral;
+            this.btnDelete.Location = new System.Drawing.Point(548, 181);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(83, 31);
+            this.btnDelete.Size = new System.Drawing.Size(110, 31);
             this.btnDelete.TabIndex = 17;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnFind
             // 
-            this.btnFind.Location = new System.Drawing.Point(558, 91);
+            this.btnFind.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btnFind.Location = new System.Drawing.Point(548, 91);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(83, 31);
+            this.btnFind.Size = new System.Drawing.Size(110, 31);
             this.btnFind.TabIndex = 16;
             this.btnFind.Text = "Find";
-            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.UseVisualStyleBackColor = false;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(558, 138);
+            this.btnEdit.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnEdit.Location = new System.Drawing.Point(548, 138);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(83, 31);
+            this.btnEdit.Size = new System.Drawing.Size(110, 31);
             this.btnEdit.TabIndex = 16;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Text = "Edit and save";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(558, 47);
+            this.btnInsert.BackColor = System.Drawing.Color.LightGreen;
+            this.btnInsert.Location = new System.Drawing.Point(548, 47);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(83, 31);
+            this.btnInsert.Size = new System.Drawing.Size(110, 31);
             this.btnInsert.TabIndex = 15;
             this.btnInsert.Text = "Insert";
-            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.UseVisualStyleBackColor = false;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // groupBox1
@@ -241,11 +249,11 @@
             this.dateTimePickerExp.CustomFormat = "yyyy-MM-dd";
             this.dateTimePickerExp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerExp.Location = new System.Drawing.Point(125, 396);
-            this.dateTimePickerExp.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            this.dateTimePickerExp.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerExp.Name = "dateTimePickerExp";
             this.dateTimePickerExp.Size = new System.Drawing.Size(217, 24);
             this.dateTimePickerExp.TabIndex = 10;
-            this.dateTimePickerExp.Value = new System.DateTime(2020, 6, 30, 3, 42, 50, 0);
+            this.dateTimePickerExp.Value = new System.DateTime(2020, 6, 30, 0, 0, 0, 0);
             // 
             // txtQtyRemaining
             // 
@@ -439,11 +447,37 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblUserName.Font = new System.Drawing.Font("Century Gothic", 10.2F);
+            this.lblUserName.Location = new System.Drawing.Point(1212, 79);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Padding = new System.Windows.Forms.Padding(0, 5, 10, 0);
+            this.lblUserName.Size = new System.Drawing.Size(101, 26);
+            this.lblUserName.TabIndex = 10;
+            this.lblUserName.Text = "username";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 10.2F);
+            this.label16.Location = new System.Drawing.Point(1147, 79);
+            this.label16.Name = "label16";
+            this.label16.Padding = new System.Windows.Forms.Padding(0, 5, 10, 0);
+            this.label16.Size = new System.Drawing.Size(65, 26);
+            this.label16.TabIndex = 10;
+            this.label16.Text = "User :";
+            // 
             // InsertItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1313, 723);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -502,5 +536,7 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Label label16;
     }
 }
